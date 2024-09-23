@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/application.png" type="image/png">
+    <title>Resume Builder</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav>
+                <div class="logo">
+                    Resume Builder
+                </div>
+                <div class="links">
+                    <button>Home</button>
+                    <button>Gallery</button>
+                </div>
+            </nav>
+        </header>
+        <section class="page">
+            <div class="resume">
+                <div class="container" id="container">
+
+                </div>
+            </div>
+            <div class="tools mostly-customized-scrollbar">
+                <div class="theme" id="theme">
+                    <input type="color" name="" id="colorChanger">
+                    <div class="colors" id="movable">
+                        <div id="red1" class="red"></div>
+                        <div id="gold1" class="gold"></div>
+                        <div id="blue1" class="blue"></div>
+                        <div id="orange1" class="orange"></div>
+                        <div id="purple1" class="purple"></div>
+                    </div>
+                </div>
+                <div class="input mostly-customized-scrollbar" id="input11">
+                    <input type="text" id="input_1" placeholder="Enter Your name">
+                    <textarea id="textArea" rows="10"></textarea>
+                </div>
+                <div class="elements">
+                    <div class="control">
+                        <img src="../images/contorl1.jpg" alt="" id="image">
+                        <img src="../images/control2.webp" alt="" id="textElement">
+                        <img src="../images/control3.png" alt="" id="textArea1">
+                    </div>
+                    <div class="img_tag">
+                        <img src="../images/1.png" alt="">
+                        <img src="../images/2.png" alt="">
+                        <img src="../images/3.png" alt="">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/input.js"></script> 
+    <script>
+        function colorChanger(color) {
+            document.querySelector('.container').style.backgroundColor = color;
+        }
+
+
+        document.getElementById("colorChanger").addEventListener("input", () => {
+            colorChanger(document.getElementById("colorChanger").value);
+        })
+
+        document.querySelector(".colors").addEventListener("click", (event) => {
+            event.preventDefault()
+            console.log(event.target)
+
+            var className = event.target.className;
+
+            switch (className) {
+                case "red":
+                    colorChanger("red")
+                    break;
+
+                case "blue":
+                    colorChanger("blue")
+                    break;
+
+
+                case "gold":
+                    colorChanger("goldenrod")
+                    break;
+
+
+                case "purple":
+                    colorChanger("purple")
+                    break;
+
+
+                case "orange":
+                    colorChanger("orange")
+                    break;
+
+
+                default:
+                    break;
+            }
+        })
+    </script>
+</body>
+
+</html>
