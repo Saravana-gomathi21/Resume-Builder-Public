@@ -204,7 +204,7 @@ textarea {
     display: none;
 } */
 
-img {
+.control img {
     width: 50px;
     height: 55px;
     background-color: #f4f5f7;
@@ -217,4 +217,30 @@ img {
 
 textarea{
     resize: none;
+}
+
+#elementCreate{
+    display: none;
+}
+
+#input_1{
+    display: none;
+}
+
+#elementCreate{
+    border: none;
+    border-radius: 5px;
+    width: 55px;
+    padding: 5px;
+    background-color: dodgerblue;
+    color: #f4f5f7;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+#elementCreate:hover{
+    background-color: rgb(12, 117, 223);
+    cursor: pointer;
+    transition: 0.4s;
 }
