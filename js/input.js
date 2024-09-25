@@ -51,14 +51,18 @@ document.getElementById('Edu').addEventListener("click",function(){
    var dii = document.querySelector(".container")
    dii.innerHTML +=education
 })
-
+var f =1;
 document.getElementById('inpImage').addEventListener("click",function(){
    document.getElementById('input_1').style.display = 'block'
    document.getElementById('input11').style.display = 'block'
    var im = document.createElement('img')
-   document.getElementById('elementCreate').style.display ='block'
+   // var inp = document.createElement('input')
+   // document.getElementById('elementCreate').style.display ='block'
    document.querySelector('.container').appendChild(im);
-   var f=1
+   // document.querySelector('.input').appendChild(inp);
+   // inp.setAttribute('type','file');
+   // var idForImg = "img"+
+   // var f=1
    var xy = "img_op"+f
    im.setAttribute('id',xy)
    document.getElementById('input_1').addEventListener('change', function(event) {
@@ -69,6 +73,7 @@ document.getElementById('inpImage').addEventListener("click",function(){
               document.getElementById(xy).src = e.target.result;
           };
           reader.readAsDataURL(file);
+          f++
       }
   });
   f++
