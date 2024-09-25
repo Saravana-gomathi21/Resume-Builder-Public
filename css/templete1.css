@@ -23,7 +23,7 @@ nav {
     align-items: center;
 }
 
-header nav .links button {
+header nav .links .button {
     background-color: dodgerblue;
     color: beige;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,6 +34,7 @@ header nav .links button {
     width: 100%;
     padding: 8px 12px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 nav {
@@ -57,39 +58,42 @@ nav {
 }
 
 .templete{
-    width: 23%;
+    width: 35%;
     background-color: black;
     color: #f2f3f4f7;
     padding: 20px;
     display: grid;
-    row-gap: 10px;
+    row-gap: 5px;
+}
+
+.PROFILE{
+    width:100%
 }
 
 .templete .PROFILE p{
     text-align: justify;
     line-height: 1.5;
+    width: 200px;
 }
 .imgage_tem{
     display: grid;
-    place-items: center;
-    position: relative;
-    left: -11px;
 }
 
 .imgage_tem img{
-    width: 85%;
+    width: 75%;
     border: 0;
     clip-path: circle(40%);
 }
 
-.container{
+.content{
+    width: 100%;
     display: flex;
     margin-top: 10px;
 }
 
 .right{
     padding: 10px;
-    width: 77%;
+    width: 100%;
     background-color: #f2f3f4f7;
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

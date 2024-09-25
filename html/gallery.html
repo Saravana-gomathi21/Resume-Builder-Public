@@ -18,25 +18,33 @@
                 Resume Builder
             </div>
             <div class="links">
-                <button>Home</button>
-                <button>Gallery</button>
+                <a href="" class="button">Home</a>
+                <a href="gallery.html" class="button">Gallery</a>
             </div>
         </nav>
     </header>
     <section>
         <div class="div-full">
             <div class="div1">
-                <img src="../images/temp.jpeg" alt="">
-                <button>choose</button>
+                <img src="../images/tem4.webp" alt="">
+                <button id="template" class="gallery_btn">choose</button>
             </div>
             <div class="div2">
-                <button>choose</button>
+                <img src="../images/temp2.webp" alt="">
+                <a href="index.html" class="gallery_btn">choose</a>
             </div>
             <div class="div3">
-                <button>choose</button>
+                <img src="../images/temp3.jpeg" alt="">
+                <a href="index.html" class="gallery_btn">choose</a>
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById("template").addEventListener('click', () => {
+            window.location.replace(`index.html?isGallery=true`)
+        })
+    </script>
 </body>
 
 </html>
