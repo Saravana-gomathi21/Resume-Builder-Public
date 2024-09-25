@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/templete1.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../images/application.png" type="image/png">
     <title>Resume Builder</title>
@@ -17,15 +18,88 @@
                     Resume Builder
                 </div>
                 <div class="links">
-                    <button>Home</button>
-                    <button>Gallery</button>
+                    <a href="" class="button">Home</a>
+                    <a href="gallery.html" class="button">Gallery</a>
                 </div>
             </nav>
         </header>
         <section class="page">
             <div class="resume">
                 <div class="container" id="container">
-
+                    <div class="content" id="content">
+                        <div class="templete">
+                            <div class="imgage_tem">
+                                <img src="../images/img.1.jfif" alt="">
+                            </div>
+                            <div class="PROFILE">
+                                <h3>PROFILE</h3>
+                                <P>During the job search process, employers view your resume
+                                    to learn what skills and qualifications you have. To give
+                                    them a better understanding of this, you can detail these points
+                                    in your resume profile.
+                                </P>
+                            </div>
+                            <div class="CONTACT">
+                                <H3>CONTACT</h3>
+                                <P><img src="../images/icon1.png" alt="">8220309600/8898785262</P>
+                                <p><img src="../images/eamil.png" alt="">mynew.emailadderss@gamil.com</p>
+                                <p><img src="../images/location.png" alt="">32.Mystreet,BG12London,Eng</p>
+                
+                            </div>
+                            <div class="skill">
+                                <h3>SKILLS</h3>
+                                <ul>
+                                    <li>SEO/SEM Marketing</li>
+                                    <li>data Anlaysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="right">
+                            <div class="head1">
+                                <h1>ASHLEY
+                                    MORANTES
+                                </h1>
+                                <H4>MARKETING MENAGER</H4>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="work">
+                                <ul></ul>
+                                <h1><b>WORK EXPERIENCE</b></h1>
+                                <hr>
+                                <li>To be a successful customer service professional, you must have a wide-ranging skillset—patience,
+                                    empathy, critical thinking, and detailed knowledge of your company’s products or services.</li>
+                
+                                <li> With such a tall order, you shouldn’t also have to be an expert at building a resume. Our easy
+                                    resume
+                                    tips are available at your fingertips!</li>
+                
+                                <li>We’ve analyzed countless resumes and chosen the 32 best customer service resume samples to help you
+                                    land
+                                    your next job in 2024.</li>
+                
+                                <li> Furthermore, we’ll share our recommendations and advice so you can put your best foot forward on
+                                    your
+                                    resume; before you know it, you’ll also be ready to tackle your customer service cover letter!</li>
+                            </div>
+                            <div class="school_edu">
+                                <h1> SCHOOL EDUCATION</h1>
+                                <hr>
+                                <UL>
+                                    <li>School name: The name of the school you attended</li>
+                                    <li>Location: The city and state where the school is located</li>
+                                    <li>Degree: The degree you obtained, if applicable</li>
+                                    <li>Field of study: Your major and minor, if applicable</li>
+                                    <li>Dates: The dates you attended or graduation date</li>
+                                    <li>GPA: Your GPA, if it was above 3.5 and relevant to the role</li>
+                                    <li>Honors and achievements: Any relevant honors or academic recognition</li>
+                                    <li>Coursework: Any relevant coursework or projects you completed</li>
+                                    <li>Extracurricular activities: Any relevant extracurricular activities</li>
+                                </UL>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tools mostly-customized-scrollbar">
@@ -106,6 +180,17 @@
                     break;
             }
         })
+
+
+        document.getElementById('content').style.display = "none"
+        const url = new URL(window.location.href);
+        const urlParams = new URLSearchParams(url.search)
+        if (urlParams.get('isGallery').toString() == "true"){
+            document.getElementById('content').style.display = "flex"
+        }
+        else{
+            document.getElementById('content').style.display = "none"
+        }
     </script>
 </body>
 

@@ -57,6 +57,7 @@ document.getElementById('inpImage').addEventListener("click",function(){
    document.getElementById('input11').style.display = 'block'
    var im = document.createElement('img')
    document.getElementById('elementCreate').style.display ='block'
+   im.classList.add('ele-image')
    document.querySelector('.container').appendChild(im);
    var f=1
    var xy = "img_op"+f
