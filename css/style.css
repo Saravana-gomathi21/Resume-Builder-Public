@@ -39,7 +39,7 @@ header nav .links .button {
     padding: 8px 12px;
     cursor: pointer;
     text-decoration: none;
-    
+
 }
 
 nav {
@@ -77,9 +77,14 @@ nav {
     background-color: white;
     width: 30%;
     overflow-y: scroll;
+}
+
+.tool_controls {
     display: grid;
     place-items: center;
+    align-items: flex-start;
     row-gap: 20px;
+    height: 100vh;
 }
 
 .mostly-customized-scrollbar::-webkit-scrollbar {
@@ -138,7 +143,7 @@ nav {
     width: 100%;
 }
 
-#textArea{
+#textArea {
     display: none;
 }
 
@@ -218,19 +223,19 @@ textarea {
 
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
-#elementCreate{
+#elementCreate {
     display: none;
 }
 
-#input_1{
+.input_1 {
     display: none;
 }
 
-#elementCreate{
+#elementCreate {
     border: none;
     border-radius: 5px;
     width: 55px;
@@ -242,12 +247,12 @@ textarea{
     font-weight: 900;
 }
 
-#elementCreate:hover{
+#elementCreate:hover {
     background-color: rgb(12, 117, 223);
     cursor: pointer;
     transition: 0.4s;
 }
 
-.ele-image{
+.ele-image {
     width: 100%;
 }

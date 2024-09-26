@@ -1,37 +1,41 @@
-var e=1
+var e = 1
+var f = 1;
 
 function createOutputElementAndModifyElements(inputID) {
-   
-      var textArea = inputID;
 
-      // Hide Previous Input Box
-      document.getElementById("input_1").style.display='none'
-      
-      // Show Input Container
-      document.getElementById("input11").style.display = 'block'
-      
-      // Show Current Textarea 
-      textArea.style.display='block'
+   var textArea = inputID;
 
-      document.getElementById('elementCreate').style.display ='block'
-      
-      var p = document.createElement('p');
-      p.classList.add("nn");
-      p.textContent=("Enter the text")
-      
-      document.querySelector('.container').appendChild(p);
-      
-      idd="strElement"+e;
-      p.setAttribute('id',idd)
-      
-      document.getElementById('elementCreate').addEventListener("click",function(){
-         document.getElementById(idd).textContent = document.getElementById('textArea').value;
-      })
-      
-      e++ 
+   // Hide Previous Input Box
+   document.querySelector(".input_1").style.display = 'none'
+
+   // Show Input Container
+   document.getElementById("input11").style.display = 'block'
+
+   // Show Current Textarea 
+   textArea.style.display = 'block'
+   textArea.style.border = 'solid'
+
+   document.getElementById('elementCreate').style.display = 'block'
+
+   var p = document.createElement('p');
+   p.classList.add("nn");
+   p.textContent = ("Enter the text")
+
+   document.querySelector('.container').appendChild(p);
+
+   idd = "strElement" + e;
+   p.setAttribute('id', idd)
+
+   console.log(p)
+
+   document.getElementById('elementCreate').addEventListener("click", function () {
+      document.getElementById(idd).textContent = document.getElementById('textArea').value;
+   })
+
+   e++
 }
 
-document.getElementById("textArea1").addEventListener("click",function() {
+document.getElementById("textArea1").addEventListener("click", function () {
    createOutputElementAndModifyElements(document.getElementById("textArea"));
 })
 
@@ -45,38 +49,46 @@ education = `
       <h4>Year : </h4><p>2022 - 2024</p>
    </div>
 `
+var yz = 1;
 
-
-document.getElementById('Edu').addEventListener("click",function(){
+document.getElementById('Edu').addEventListener("click", function () {
    var dii = document.querySelector(".container")
-   dii.innerHTML +=education
+   dii.innerHTML += education
 })
-var f =1;
-document.getElementById('inpImage').addEventListener("click",function(){
-   document.getElementById('input_1').style.display = 'block'
+
+document.getElementById('inpImage').addEventListener("click", function () {
+   document.querySelector('.input_1').style.display = 'block'
    document.getElementById('input11').style.display = 'block'
+
    var im = document.createElement('img')
-   // var inp = document.createElement('input')
-   // document.getElementById('elementCreate').style.display ='block'
+   im.classList.add('ele-image')
+
    document.querySelector('.container').appendChild(im);
-   // document.querySelector('.input').appendChild(inp);
-   // inp.setAttribute('type','file');
-   // var idForImg = "img"+
-   // var f=1
-   var xy = "img_op"+f
-   im.setAttribute('id',xy)
-   document.getElementById('input_1').addEventListener('change', function(event) {
-      const file = event.target.files[0];
+
+   var xy = "img_op" + f.toString();
+   im.setAttribute('id', xy)
+
+   console.log(im)
+
+   var zz = 'a' + yz;
+   var inp_img = document.querySelector('.input_1');
+   inp_img.setAttribute('id', zz);
+   document.getElementById(zz).addEventListener('change', function (zz) {
+      const file = zz.target.files[0];
       if (file) {
-          const reader = new FileReader();
-          reader.onload = function(e) {
-              document.getElementById(xy).src = e.target.result;
-          };
-          reader.readAsDataURL(file);
-          f++
+         const reader = new FileReader();
+         reader.onload = function (zz) {
+            // console.log(document.getElementById(xy))
+            document.getElementById(xy).src = zz.target.result;
+         };
+         reader.readAsDataURL(file);
+         // console.log(reader)
       }
-  });
-  f++
+
+   });
+   f++
+   console.log(zz)
+   yz++
 })
 
 function colorChanger(color) {
@@ -84,11 +96,11 @@ function colorChanger(color) {
 }
 
 
-document.getElementById("colorChanger").addEventListener("input", ()=>{
+document.getElementById("colorChanger").addEventListener("input", () => {
    colorChanger(document.getElementById("colorChanger").value);
 })
 
-document.querySelector(".colors").addEventListener("click", (event)=>{
+document.querySelector(".colors").addEventListener("click", (event) => {
    event.preventDefault()
    console.log(event.target)
 
@@ -98,27 +110,27 @@ document.querySelector(".colors").addEventListener("click", (event)=>{
       case "red":
          colorChanger("red")
          break;
-      
+
       case "blue":
          colorChanger("blue")
          break;
 
-         
+
       case "gold":
          colorChanger("goldenrod")
          break;
-   
-         
+
+
       case "purple":
          colorChanger("purple")
          break;
-   
-         
+
+
       case "orange":
          colorChanger("orange")
          break;
-   
-   
+
+
       default:
          break;
    }

@@ -44,7 +44,7 @@
                                 <P><img src="../images/icon1.png" alt="">8220309600/8898785262</P>
                                 <p><img src="../images/eamil.png" alt="">mynew.emailadderss@gamil.com</p>
                                 <p><img src="../images/location.png" alt="">32.Mystreet,BG12London,Eng</p>
-                
+
                             </div>
                             <div class="skill">
                                 <h3>SKILLS</h3>
@@ -68,20 +68,26 @@
                                 <ul></ul>
                                 <h1><b>WORK EXPERIENCE</b></h1>
                                 <hr>
-                                <li>To be a successful customer service professional, you must have a wide-ranging skillset—patience,
-                                    empathy, critical thinking, and detailed knowledge of your company’s products or services.</li>
-                
-                                <li> With such a tall order, you shouldn’t also have to be an expert at building a resume. Our easy
+                                <li>To be a successful customer service professional, you must have a wide-ranging
+                                    skillset—patience,
+                                    empathy, critical thinking, and detailed knowledge of your company’s products or
+                                    services.</li>
+
+                                <li> With such a tall order, you shouldn’t also have to be an expert at building a
+                                    resume. Our easy
                                     resume
                                     tips are available at your fingertips!</li>
-                
-                                <li>We’ve analyzed countless resumes and chosen the 32 best customer service resume samples to help you
+
+                                <li>We’ve analyzed countless resumes and chosen the 32 best customer service resume
+                                    samples to help you
                                     land
                                     your next job in 2024.</li>
-                
-                                <li> Furthermore, we’ll share our recommendations and advice so you can put your best foot forward on
+
+                                <li> Furthermore, we’ll share our recommendations and advice so you can put your best
+                                    foot forward on
                                     your
-                                    resume; before you know it, you’ll also be ready to tackle your customer service cover letter!</li>
+                                    resume; before you know it, you’ll also be ready to tackle your customer service
+                                    cover letter!</li>
                             </div>
                             <div class="school_edu">
                                 <h1> SCHOOL EDUCATION</h1>
@@ -103,37 +109,39 @@
                 </div>
             </div>
             <div class="tools mostly-customized-scrollbar">
-                <div class="theme" id="theme">
-                    <input type="color" name="" id="colorChanger">
-                    <div class="colors" id="movable">
-                        <div id="red1" class="red"></div>
-                        <div id="gold1" class="gold"></div>
-                        <div id="blue1" class="blue"></div>
-                        <div id="orange1" class="orange"></div>
-                        <div id="purple1" class="purple"></div>
+                <div class="tool_controls">
+                    <div class="theme" id="theme">
+                        <input type="color" name="" id="colorChanger">
+                        <div class="colors" id="movable">
+                            <div id="red1" class="red"></div>
+                            <div id="gold1" class="gold"></div>
+                            <div id="blue1" class="blue"></div>
+                            <div id="orange1" class="orange"></div>
+                            <div id="purple1" class="purple"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="input mostly-customized-scrollbar" id="input11">
-                    <input type="file" id="input_1">
-                    <textarea id="textArea" rows="10"></textarea>
-                    <button id="elementCreate">Apply</button>
-                </div>
-                <div class="elements">
-                    <div class="control">
-                        <img src="../images/contorl1.jpg" alt="" id="inpImage">
-                        <img src="../images/control2.webp" alt="" id="textArea1">
+                    <div class="input mostly-customized-scrollbar" id="input11">
+                        <input type="file" class="input_1">
+                        <textarea id="textArea" rows="10"></textarea>
+                        <button id="elementCreate">Apply</button>
                     </div>
-                    <div class="img_tag">
-                        <img src="../images/1.png" alt="" id="Edu">
-                        <img src="../images/2.png" alt="" id="Achiev">
-                        <img src="../images/3.png" alt="" id="intern">
+                    <div class="elements">
+                        <div class="control">
+                            <img src="../images/contorl1.jpg" alt="" id="inpImage">
+                            <img src="../images/control2.webp" alt="" id="textArea1">
+                        </div>
+                        <div class="img_tag">
+                            <img src="../images/1.png" alt="" id="Edu">
+                            <img src="../images/2.png" alt="" id="Achiev">
+                            <img src="../images/3.png" alt="" id="intern">
+                        </div>
                     </div>
                 </div>
             </div>
             </div>
         </section>
     </main>
-    <script src="../js/input.js"></script> 
+    <script src="../js/input.js"></script>
     <script src="../js/element.js"></script>
     <script>
         function colorChanger(color) {
@@ -185,12 +193,22 @@
         document.getElementById('content').style.display = "none"
         const url = new URL(window.location.href);
         const urlParams = new URLSearchParams(url.search)
-        if (urlParams.get('isGallery').toString() == "true"){
+        if (urlParams.get('isGallery').toString() == "true") {
             document.getElementById('content').style.display = "flex"
         }
-        else{
+        else {
             document.getElementById('content').style.display = "none"
         }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#container").sortable();
+        });
+        $(function () {
+            $("#resizable").resizable();
+        });
     </script>
 </body>
 
