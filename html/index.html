@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/templete1.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../images/application.png" type="image/png">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    
     <title>Resume Builder</title>
 </head>
 
@@ -18,13 +20,16 @@
                     Resume Builder
                 </div>
                 <div class="links">
-                    <a href="" class="button">Home</a>
+                    <a href="../html/landingpage.html" class="button">Home</a>
                     <a href="gallery.html" class="button">Gallery</a>
                 </div>
             </nav>
         </header>
         <section class="page">
             <div class="resume">
+                <div class="pdf_down">
+                    <button id="cmd">PDF</button>
+                </div>
                 <div class="container" id="container">
                     <div class="content" id="content">
                         <div class="templete">
@@ -50,7 +55,7 @@
                                 <h3>SKILLS</h3>
                                 <ul>
                                     <li>SEO/SEM Marketing</li>
-                                    <li>data Anlaysis</li>
+                                    <li>data Analysis</li>
                                 </ul>
                             </div>
                         </div>
@@ -60,7 +65,7 @@
                                 <h1>ASHLEY
                                     MORANTES
                                 </h1>
-                                <H4>MARKETING MENAGER</H4>
+                                <H4>MARKETING MANAGER</H4>
                             </div>
                             <br>
                             <br>
@@ -124,6 +129,7 @@
                         <input type="file" class="input_1">
                         <textarea id="textArea" rows="10"></textarea>
                         <button id="elementCreate">Apply</button>
+                        <!-- <button id="cmd">PDF</button> -->
                     </div>
                     <div class="elements">
                         <div class="control">
@@ -141,7 +147,6 @@
             </div>
         </section>
     </main>
-    <script src="../js/input.js"></script>
     <script src="../js/element.js"></script>
     <script>
         function colorChanger(color) {
@@ -204,12 +209,62 @@
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
     <script>
         $(function () {
-            $("#container").sortable();
-        });
-        $(function () {
-            $("#resizable").resizable();
+            // $("#container").sortable();
+            $( "#container" ).selectable({
+                selected:function() {
+                    $("#container .ui-widget-content").each(function(index) {
+                        if ($(this).hasClass("ui-selected")) {
+                            console.log(this)
+                             var iddd=this.id
+                             document.getElementById('input11').style.display = "block"
+                             document.getElementById('textArea').style.display = "block"
+                                document.getElementById('elementCreate').addEventListener("click",function(){
+                                    document.this.textcontent = document.getElementById("textArea").value
+                                })
+                        }
+                        console.log(this.id)
+                             var iddd=this.id
+                             document.getElementById('input11').style.display = "block"
+                             document.getElementById('textArea').style.display = "block"
+                                document.getElementById('elementCreate').addEventListener("click",()=>{
+                                    document.this.textcontent = document.getElementById("textArea").value
+                                })
+                    });
+                }
+            });
         });
     </script>
+    <script src="../js/input.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+window.jsPDF = window.jspdf.jsPDF;
+document.getElementById('cmd').addEventListener('click', function () {
+    const doc = new jsPDF();
+
+    // Capture the content of the div
+    const content = document.getElementById('container');
+
+    // Add the content to the PDF
+    doc.html(content, {
+        callback: function(doc) {
+            doc.save('sample-document.pdf');
+        },
+    x: 15,
+    y: 15,
+    width: 170, //target width in the PDF document
+    windowWidth: 650 //window width in CSS pixels
+    })
+
+    // Save the PDF
+    // doc.save('download.pdf');
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
 </body>
 
 </html>

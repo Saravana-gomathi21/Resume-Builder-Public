@@ -253,6 +253,36 @@ textarea {
     transition: 0.4s;
 }
 
-.ele-image {
+.resizable {
+    width: 100%;
+}
+
+
+#container .ui-selecting {
+    border: 2px dashed #ff0000;
+  }
+  
+  #container .ui-selected {
+    border: 2px solid #ff0000;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(255, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(255, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(255, 0, 0, 1);
+  }
+#cmd{
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+    width: 55px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:medium;
+    font-weight: 900;
+    position: relative;
+    left: 820px;
+    top: -35px;
+}
+
+.pdf_down{
     width: 100%;
 }

@@ -1,47 +1,55 @@
 var e = 1
 var f = 1;
+var cl = "ui-widget-content"
 
-function createOutputElementAndModifyElements(inputID) {
+let currentTextAreaId;
 
-   var textArea = inputID;
+function createOutputElementAndModifyElements(textArea) {
 
-   // Hide Previous Input Box
-   document.querySelector(".input_1").style.display = 'none'
+   document.querySelector(".input_1").style.display = 'none';
 
-   // Show Input Container
-   document.getElementById("input11").style.display = 'block'
 
-   // Show Current Textarea 
-   textArea.style.display = 'block'
-   textArea.style.border = 'solid'
+   document.getElementById("input11").style.display = 'block';
 
-   document.getElementById('elementCreate').style.display = 'block'
 
-   var p = document.createElement('p');
-   p.classList.add("nn");
-   p.textContent = ("Enter the text")
+   textArea.style.display = 'block';
+   textArea.style.border = 'solid';
 
-   document.querySelector('.container').appendChild(p);
+   document.getElementById('elementCreate').style.display = 'block';
 
-   idd = "strElement" + e;
-   p.setAttribute('id', idd)
 
-   console.log(p)
+   const outputElement = document.createElement('pre');
+   outputElement.textContent = "Enter the text";
+   const elementId = `strElement${e}`;
+   outputElement.setAttribute('id', elementId);
+   outputElement.classList.add(cl);
+   document.querySelector('.container').appendChild(outputElement);
 
-   document.getElementById('elementCreate').addEventListener("click", function () {
-      document.getElementById(idd).textContent = document.getElementById('textArea').value;
-   })
 
-   e++
+
+
+   currentTextAreaId = textArea.id;
+
+
+   document.getElementById('elementCreate').onclick = function () {
+      outputElement.textContent = document.getElementById(currentTextAreaId).value;
+      $("#" + outputElement.id).resizable();
+   };
+
+   e++;
+
 }
+
 
 document.getElementById("textArea1").addEventListener("click", function () {
    createOutputElementAndModifyElements(document.getElementById("textArea"));
-})
+});
+
+
 
 education = `
    <div>
-      <h1>Education</h1>
+      <h1 id="resizable">Education</h1>
       <hr>
       <h3>School</h3>
       <h4>Name : </h4><p>MSPVL School</p>
@@ -56,40 +64,48 @@ document.getElementById('Edu').addEventListener("click", function () {
    dii.innerHTML += education
 })
 
+
+let imageCount = 0;
+let inputCount = 0;
+
 document.getElementById('inpImage').addEventListener("click", function () {
-   document.querySelector('.input_1').style.display = 'block'
-   document.getElementById('input11').style.display = 'block'
 
-   var im = document.createElement('img')
-   im.classList.add('ele-image')
+   document.querySelector('.input_1').style.display = 'block';
+   document.getElementById('input11').style.display = 'block';
 
-   document.querySelector('.container').appendChild(im);
 
-   var xy = "img_op" + f.toString();
-   im.setAttribute('id', xy)
+   const imgElement = document.createElement('img');
+   imgElement.classList.add('resizable');
 
-   console.log(im)
 
-   var zz = 'a' + yz;
-   var inp_img = document.querySelector('.input_1');
-   inp_img.setAttribute('id', zz);
-   document.getElementById(zz).addEventListener('change', function (zz) {
-      const file = zz.target.files[0];
+   document.querySelector('.container').appendChild(imgElement);
+
+
+   const imgId = `img_op${imageCount}`;
+   imgElement.setAttribute('id', imgId);
+
+
+   const inputId = `img_input${inputCount}`;
+   const inputField = document.querySelector('.input_1');
+   inputField.setAttribute('id', inputId);
+
+
+   document.getElementById(inputId).addEventListener('change', function (event) {
+      const file = event.target.files[0];
       if (file) {
          const reader = new FileReader();
-         reader.onload = function (zz) {
-            // console.log(document.getElementById(xy))
-            document.getElementById(xy).src = zz.target.result;
+         reader.onload = function (event) {
+            imgElement.src = event.target.result;
          };
          reader.readAsDataURL(file);
-         // console.log(reader)
       }
-
    });
-   f++
-   console.log(zz)
-   yz++
-})
+
+
+   imageCount++;
+   inputCount++;
+});
+
 
 function colorChanger(color) {
    document.querySelector('.container').style.backgroundColor = color;
@@ -135,3 +151,4 @@ document.querySelector(".colors").addEventListener("click", (event) => {
          break;
    }
 })
+

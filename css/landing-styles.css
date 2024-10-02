@@ -1,0 +1,73 @@
+*{
+    margin: 6px;
+    padding: 0px;
+    border: 0px;
+}
+body{
+    background-image: url("./Image/web-pages.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+
+
+.para{
+    align-items: start;
+    font-size: medium;
+    font-size:35px ;
+    color: #333a4d;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.img_land{
+    width: 400px;
+    height: auto;
+    position: absolute;
+    left: 950px;
+    top:80px; 
+}
+.btn_land{
+    /* width: 130px; */
+    height: 40px;
+    padding: 7px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+}
+
+header{
+    border-radius: 8px;
+}
+/* Resume1 */
+.edu_place1{
+    display: flex;
+    justify-content: space-between;
+}
+.edu_place2{
+    display: flex;
+    justify-content: space-between;
+}
+.edu_place3{
+    display: flex;
+    justify-content: space-between;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+}
+.ip_side{
+    display: grid;
+    place-items: center;
+}
+
+.para1_land{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+
+.mainland{
+    margin-left: 55px;
+    margin-top: 55px;
+}
